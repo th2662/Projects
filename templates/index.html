@@ -18,58 +18,7 @@
 <!-- <main>태그 <div>로 변경 -->
 <!-- CSS @media 삭제, 디스플레이 규격에 따라 어떻게 표시할지에 대한 설정, 필요하면 다시 넣으면 됨-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-    <script>
-        $.ajax({
-                type: "GET",
-                url: "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric",
-                data: {},
-                success: function (response) {
-                    //날씨
-                    let weather = response["weather"][0]["main"];
-                    //날씨 설명
-                    let description = response["weather"][0]["description"];
-                    //지역
-                    let location = response["name"];
-                    //온도
-                    let temp = response["main"]["temp"];
-                    //체감 온도
-                    let feels_like = response["main"]["feels_like"];
-                    //최소 온도
-                    let temp_min = response["main"]["temp_min"];
-                    //최고 온도
-                    let temp_max = response["main"]["temp_max"];
-
-                    // console.log(weather, description, location, Math.floor(temp - 273), Math.floor(feels_like - 273), Math.floor(temp_max - 273), Math.floor(temp_min) - 273);
-                    $('.temp').append(temp);
-                    $('.location').append(location);
-                    $('.temp-min').append(temp_min);
-                    $('.temp-max').append(temp_max);
-
-                }
-
-            }
-        )
-
-
-        $.ajax({
-            type: "GET",
-            url: "https://api.openweathermap.org/data/2.5/onecall?lat=37.532600&lon=127.024612&exclude=&appid=00d5b54c01eecba3641625ac2a6d6d54",
-            data: {},
-            success: function (response) {
-                //자외선
-                let uv = response["current"]["uvi"];
-
-                $('.uvi').append(uv);
-            }
-
-        })
-
-
-
-    </script>
-
+    <script src="../static/js/script.js"></script>
 
 
 
