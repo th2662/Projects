@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WTW - what to where</title>
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
     <link href="../static/fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
@@ -13,12 +14,66 @@
 
 <!--bootstrap.min.css는 bootstrap 배포파일 그냥 두기-->
 <!-- js 기능 사용하지 않아서 삭제함. 우리가 원하는 배경이미지 기능은 코드 새로 짜야됨-->
-<!-- <hr>태그 삭제 -->
+<!-- <hr>태그 삭제, toggler css 삭제 , tm-bg-control-* css 삭제-, index 외 페이지용 css 삭제-->
 <!-- <main>태그 <div>로 변경 -->
-<!-- toggler css 삭제 -->
-<!-- tm-bg-control-* css 삭제-->
-<!-- index 외 페이지용 css 삭제-->
 <!-- CSS @media 삭제, 디스플레이 규격에 따라 어떻게 표시할지에 대한 설정, 필요하면 다시 넣으면 됨-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script>
+        $.ajax({
+                type: "GET",
+                url: "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric",
+                data: {},
+                success: function (response) {
+                    //날씨
+                    let weather = response["weather"][0]["main"];
+                    //날씨 설명
+                    let description = response["weather"][0]["description"];
+                    //지역
+                    let location = response["name"];
+                    //온도
+                    let temp = response["main"]["temp"];
+                    //체감 온도
+                    let feels_like = response["main"]["feels_like"];
+                    //최소 온도
+                    let temp_min = response["main"]["temp_min"];
+                    //최고 온도
+                    let temp_max = response["main"]["temp_max"];
+
+                    // console.log(weather, description, location, Math.floor(temp - 273), Math.floor(feels_like - 273), Math.floor(temp_max - 273), Math.floor(temp_min) - 273);
+                    $('.temp').append(temp);
+                    $('.location').append(location);
+                    $('.temp-min').append(temp_min);
+                    $('.temp-max').append(temp_max);
+
+                }
+
+            }
+        )
+
+
+        $.ajax({
+            type: "GET",
+            url: "https://api.openweathermap.org/data/2.5/onecall?lat=37.532600&lon=127.024612&exclude=&appid=00d5b54c01eecba3641625ac2a6d6d54",
+            data: {},
+            success: function (response) {
+                //자외선
+                let uv = response["current"]["uvi"];
+
+                $('.uvi').append(uv);
+            }
+
+        })
+
+
+
+    </script>
+
+
+
+
+</head>
 
 <body>
     <div class="tm-container">  <!--전체 컨테이너-->
@@ -50,10 +105,10 @@
                 <div class="tm-col-left"></div>
                 <div class="tm-col-right">
                     <section class="tm-content">
-                        <div class="tm-row align-items-center">
-                            <img src="..." class="rounded float-left" alt="...">
-                            <img src="..." class="rounded float-right" alt="...">
-                            <img src="..." class="rounded float-right" alt="...">
+                        <div class="tm-row thumbnails">
+                            <img src="" class="rounded float-left" alt=""> Thumbnail01
+                            <img src="" class="rounded float-right" alt=""> Thumbnail02
+                            <img src="" class="rounded float-right" alt=""> Thumbnail03
                         </div>
                     </section>
                 </div>
@@ -61,7 +116,7 @@
             <div class="tm-row row-03">
                 <div class="tm-col-left">
                     <section class="tm-content">
-                        <h2 class="mb-5 tm-content-title">옷 들어갈 자리@@@</h2>
+                        <h2 class="mb-5 tm-content-title">큰 옷 들어갈 자리</h2>
                     </section>
                 </div>
                 <div class="tm-col-right">
@@ -69,22 +124,28 @@
                         <h2 class="mb-5 tm-content-title">날씨 상세정보</h2>
                         <p class="mb-5">
                             <span>최고기온/최저기온</span>
-                            <span class="float-right">25℃/18℃</span>
+                            <span class="float-right">
+                                <span class="temp-min"></span>
+                                <span class="temp-max">/ </span>
+                            </span>
+
                         </p>
                         <p class="mb-5">
                             <span>습도</span>
-                            <span class="float-right">50%</span>
+                            <span class="humidity float-right"></span>
                         </p>
                         <p class="mb-5">
-                            <span>바람</span>
-                            <span class="float-right">1.4km/h</span>
+                            <span>자외선</span>
+                            <span class="uvi float-right"></span>
                         </p>
                     </section>
                 </div>
             </div>
             <div class="tm-row row-04">
             <div class="tm-col-left text-start">
-                Seoul, 24℃
+                <span class="wt-icon">아이콘 </span>
+                <span class="location"> </span>
+                <span class="temp"> </span>
             </div>
             <div class="tm-col-right tm-col-footer">
                 <footer class="tm-site-footer text-right">

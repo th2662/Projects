@@ -189,3 +189,10 @@ textarea {
 .form-control::-webkit-input-placeholder { color: white; } /* Edge */
 .form-control:-ms-input-placeholder { color: white; } /* Internet Explorer 10-11 */
 .form-control::placeholder { color: white; }
+
+
+/*임의로 추가해 넣은거*/
+
+.thumbnails {
+    justify-content: space-between;
+}
