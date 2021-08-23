@@ -18,12 +18,18 @@
                     let temp_min = response["main"]["temp_min"];
                     //최고 온도
                     let temp_max = response["main"]["temp_max"];
+                    //아이콘
+                    let wt_icon = response["weather"][0]["icon"]
 
                     // console.log(weather, description, location, Math.floor(temp - 273), Math.floor(feels_like - 273), Math.floor(temp_max - 273), Math.floor(temp_min) - 273);
                     $('.temp').append(temp);
                     $('.location').append(location);
                     $('.temp-min').append(temp_min);
                     $('.temp-max').append(temp_max);
+                    
+                    let iconUrl = '<img src="https://openweathermap.org/img/wn/'+ wt_icon +'.png" alt="'+ description +'">'
+                    $('.wt-icon').html(iconUrl);
+
 
                 }
 
