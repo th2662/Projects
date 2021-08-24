@@ -41,35 +41,49 @@
                     $('.wt-icon').html(iconUrl);
 
                 }
+                /* 배경 파일 작성하는 함수*/
+
+                function weatherbg(wt_icon) {
+                    let bgUrl = 'url("../static/img/'+ wt_icon +'_bg.jpg")'
+                    $('body').css("background-image", bgUrl);
+                }
+
                 /* id에 따른 icon 이름 정해주고 위의 함수를 실행시키는 조건문 */
                 if (200 <= wt_id & wt_id <300) {
                     let wt_icon = "thunderstorm";
                     weathericon(wt_icon);
+                    weatherbg(wt_icon)
                     }
                     else if (300 <= wt_id & wt_id <400) {
                     let wt_icon = "drizzle";
                     weathericon(wt_icon);
+                    weatherbg(wt_icon)
                     }
                     else if (500 <= wt_id & wt_id <600) {
                     let wt_icon = "rain";
                     weathericon(wt_icon);
+                    weatherbg(wt_icon)
                     }
                     else if (600 <= wt_id & wt_id <700) {
                     let wt_icon = "snow";
                     weathericon(wt_icon);
+                    weatherbg(wt_icon)
                     }
                     else if (wt_id == 800) {
                     let wt_icon = "clear";
                     weathericon(wt_icon);
+                    weatherbg(wt_icon)
                     }
                     else if (801 <= wt_id & wt_id <805) {
                     let wt_icon = "clouds";
                     weathericon(wt_icon);
+                    weatherbg(wt_icon)
                     }
                     /*700번대 */
                     else {
                     let wt_icon = "smog";
                     weathericon(wt_icon);
+                    weatherbg(wt_icon)
 
                 }
             }
