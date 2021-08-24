@@ -28,8 +28,8 @@
 
                 $('.temp').append(temp);
                 $('.location').append(location);
-                $('.temp-min').append(temp_min);
-                $('.temp-max').append(temp_max);
+                $('.temp-min').append(Math.round(temp_min));
+                $('.temp-max').append(Math.round(temp_max));
                 $('.humidity').append(humidity);
 
 
