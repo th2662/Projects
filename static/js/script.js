@@ -90,3 +90,17 @@
         })
 
 
+/* 썸네일 코드 */
+
+        let imgArray= new Array();
+        imgArray[0]="https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
+        imgArray[1]="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxob29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=600";
+        imgArray[2]="https://images.unsplash.com/photo-1575228245458-b25e14dd04a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
+        imgArray[3]="https://images.unsplash.com/photo-1578102718171-ec1f91680562?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGNvYXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
+
+        function showImage()
+        {
+            let imgNum=Math.round(Math.random() * imgArray.length);
+            let objImg=document.getElementById("introImg");
+            objImg.src=imgArray[imgNum];
+        }
