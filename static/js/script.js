@@ -6,7 +6,7 @@
                 success: function (response) {
                 //기상 상태 정보 //
                     //id
-                    let id = response["weather"][0]["id"];
+                    let wt_id = response["weather"][0]["id"];
                     //날씨
                     let main = response["weather"][0]["main"];
                     //날씨 설명
@@ -34,8 +34,8 @@
                     $('.temp-max').append(temp_max);
                     $('.humidity').append(humidity);
                     
-                if (id > 800){
-                    let wt_icon = "thunderstorm"
+                if (wt_id > 800){
+                    let wt_icon = "thunderstorm";
                     // let iconUrl = '<img src="https://openweathermap.org/img/wn/'+ wt_icon +'.png" alt="'+ description +'">'/
                    let iconUrl = '<img src="../static/img/'+ wt_icon +'.svg" alt="'+ description +'">'
                     $('.wt-icon').html(iconUrl);

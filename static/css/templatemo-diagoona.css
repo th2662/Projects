@@ -15,8 +15,8 @@ body {
     background-color: #2C353C;
 }
 
-a { 
-    transition: all 0.3s ease; 
+a {
+    transition: all 0.3s ease;
     text-decoration: none;
 }
 
@@ -195,4 +195,9 @@ textarea {
 
 .thumbnails {
     justify-content: space-between;
+}
+
+.svg {
+    width : 150px;
+    height: 150px;
 }
