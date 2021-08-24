@@ -63,7 +63,7 @@
                     weathericon(wt_icon);
                     }
                     else if (801 <= wt_id & wt_id <805) {
-                    let wt_icon = "rain";
+                    let wt_icon = "clouds";
                     weathericon(wt_icon);
                     }
                     /*700번대 */
