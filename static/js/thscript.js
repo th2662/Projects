@@ -53,7 +53,6 @@ var I = new Array();
 I[0] = "https://images.unsplash.com/photo-1473351528942-b35ae8d43e42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
 I[1] = "https://images.unsplash.com/photo-1612913334025-bedf136f8715?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80";
 I[2] = "https://images.unsplash.com/photo-1598522325074-042db73aa4e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80";
-
 <!--반팔-->
 var J = new Array();
 J[0] = "https://images.unsplash.com/photo-1554568218-0f1715e72254?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80";
@@ -171,7 +170,7 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                 let description = response["weather"][0]["description"];
                 //기온 상세 정보 //
                 //온도
-                let temp = response["main"]["temp"];
+                var temp = response["main"]["temp"];
                 //체감 온도
                 let feels_like = response["main"]["feels_like"];
                 //최소 온도
@@ -184,14 +183,12 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                 //지역
                 let location = response["name"];
 
+
                 $('.temp').append(temp);
                 $('.location').append(location);
-                $('.temp-min').append(Math.round(temp_min));
-                $('.temp-max').append(Math.round(temp_max));
+                $('.temp-min').append(temp_min);
+                $('.temp-max').append(temp_max);
                 $('.humidity').append(humidity);
-
-
-
 
                 /* 아이콘 파일 주소 작성하는 함수*/
                 function weathericon(wt_icon) {
@@ -199,121 +196,117 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     $('.wt-icon').html(iconUrl);
 
                 }
-                /* 배경 파일 작성하는 함수*/
-
-                function weatherbg(wt_icon) {
-                    let bgUrl = 'url("../static/img/'+ wt_icon +'_bg.jpg")'
-                    $('body').css("background-image", bgUrl);
-                }
 
                 /* id에 따른 icon 이름 정해주고 위의 함수를 실행시키는 조건문 */
                 if (200 <= wt_id & wt_id <300) {
                     let wt_icon = "thunderstorm";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
                     }
                     else if (300 <= wt_id & wt_id <400) {
                     let wt_icon = "drizzle";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
                     }
                     else if (500 <= wt_id & wt_id <600) {
                     let wt_icon = "rain";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
                     }
                     else if (600 <= wt_id & wt_id <700) {
                     let wt_icon = "snow";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
                     }
                     else if (wt_id == 800) {
                     let wt_icon = "clear";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
                     }
                     else if (801 <= wt_id & wt_id <805) {
                     let wt_icon = "clouds";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
                     }
                     /*700번대 */
                     else {
                     let wt_icon = "smog";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
 
                 }
-                        /* 썸네일 코드 */
 
-                function random(pram, nb) {
-                    let imgNum = Math.round(Math.random() * pram.length);
-                    let objImg = document.getElementById("introImg"+nb);
-                        objImg.src = pram[imgNum];
+
+                    if (temp < 5) {
+                        // var range = "d1";
+                        var sw1 = R;    //패딩
+                        var sw2 = X;    //코트
+                        var sw3 = H;    //목도리
+
+                    } else if (5 <= temp & temp < 9) {
+                        // var range = "d2";
+                        var sw1 = S;    //가죽자켓
+                        var sw2 = E;    //레깅스
+                        var sw3 = D;    //니트
+
+                    } else if (9 <= temp & temp < 12) {
+                        // var range = "d3";
+                        var sw1 = Q.concat(L);   //트렌치코트, 야상
+                        var sw2 = D;             //니트
+                        var sw3 = P.concat(K);   //청바지, 스타킹
+
+                    } else if (12 <= temp & temp < 17) {
+                        // var range = "d4";
+                        var sw1 = T, L;             //야상, 바람막이
+                        var sw2 = B;                //가디건
+                        var sw3 = P.concat(G, K);    //청바지, 면바지, 스타킹
+
+                    } else if (17 <= temp & temp < 20) {
+                        // var range = "d5";
+                        var sw1 = O.concat(Y);       //원피스, 후드티
+                        var sw2 = M.concat(F, B);    //얇은니트, 맨투맨, 가디건
+                        var sw3 = P.concat(G, W);    //청바지, 면바지, 슬랙스
+
+                    } else if (20 <= temp & temp < 23) {
+                        var range = "d6";
+                        var sw1 = U;                 //블라우스
+                        var sw2 = B.concat(C, Y);    //면바지, 후드티
+                        var sw3 = G.concat(P, W, V); //면바지, 청바지, 슬랙스, 스키니
+
+                    } else if (23 <= temp & temp < 28) {
+                        console.log("날씨쮝이네!!")
+                        // var range = "d7";
+                        var sw1 = N;            //얇은 셔츠
+                        var sw2 = J;            //반팔
+                        var sw3 = I.concat(G);  //반바지, 면바지
+
+                    } else {
+                        // var range = "d8";
+                        var sw1 = O;             //원피스
+                        var sw2 = A.concat(J);   //민소매, 반팔
+                        var sw3 = I;             //반바지
+                    }
+
+               function showImage1() {
+
+                    var imgNum = Math.round(Math.random() * sw1.length);
+                    var objImg = document.getElementById("introImg1");
+                    objImg.src = sw1[imgNum];
                 }
 
-                if (temp <5) {
-                    let tbd1 = R;
-                    let tbd2 = X;
-                    let tbd3 = H;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (5 <=temp & temp <9) {
-                    let tbd1 = S;
-                    let tbd2 = D;
-                    let tbd3 = E;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (9 <=temp & temp <12) {
-                    let tbd1 = D.concat(L);
-                    let tbd2 = Q;
-                    let tbd3 = P.concat(K);
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (12 <=temp & temp <17) {
-                    let tbd1 = B.concat(T.concat((L)));
-                    let tbd2 = G.concat(P);
-                    let tbd3 = K;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (17 <=temp & temp <20) {
-                    let tbd1 = M.concat(F);
-                    let tbd2 = O.concat((B.concat(Y)));
-                    let tbd3 = W.concat(G.concat(P));
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (20 <=temp & temp <23) {
-                    let tbd1 = C.concat(U);
-                    let tbd2 = W.concat(Y.concat(B));
-                    let tbd3 = V.concat(P.concat(G));
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (23 <=temp & temp <28) {
-                    let tbd1 = J.concat(N.concat(G.concat(I)));
-                    let tbd2 = G;
-                    let tbd3 = I;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else /* over 28 degree*/ {
-                    let tbd1 = A.concat(J);
-                    let tbd2 = I;
-                    let tbd3 = O;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
+                function showImage2() {
+                    var imgNum = Math.round(Math.random() * sw2.length);
+                    var objImg = document.getElementById("introImg2");
+                    objImg.src = sw2[imgNum];
                 }
 
+                function showImage3() {
+                    var imgNum = Math.round(Math.random() * sw3.length);
+                    var objImg = document.getElementById("introImg3");
+                    objImg.src = sw3[imgNum];
+                }
+
+                showImage1()
+                showImage2()
+                showImage3()
             }
-        })
-/*자외선 요청 코드*/
 
+        })
+
+        /*자외선 요청 코드*/
         $.ajax({
             type: "GET",
             url: "https://api.openweathermap.org/data/2.5/onecall?lat=37.532600&lon=127.024612&exclude=&appid=00d5b54c01eecba3641625ac2a6d6d54",
@@ -321,8 +314,12 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
             success: function (response) {
                 //자외선
                 let uv = response["current"]["uvi"];
-
                 $('.uvi').append(uv);
             }
 
         })
+
+
+
+
+

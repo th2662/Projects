@@ -20,9 +20,9 @@ C[2] = "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixid=MnwxMj
 
 <!--니트-->
 var D = new Array();
-D[0] = "https://images.unsplash.com/photo-1605331362342-38ced45011a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
-D[1] = "https://images.unsplash.com/photo-1536992266094-82847e1fd431?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=998&q=80";
-D[2] = "https://images.unsplash.com/photo-1485231183945-fffde7cc051e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80";
+C[0] = "https://images.unsplash.com/photo-1605331362342-38ced45011a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+C[1] = "https://images.unsplash.com/photo-1536992266094-82847e1fd431?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=998&q=80";
+C[2] = "https://images.unsplash.com/photo-1485231183945-fffde7cc051e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80";
 
 <!--레깅스-->
 var E = new Array();
@@ -155,8 +155,8 @@ Y[1] = "https://images.unsplash.com/photo-1610271340738-726e199f0258?ixid=MnwxMj
 Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
 
 
-
 /* OpenWeather API 요청 코드 */
+
         $.ajax({
             type: "GET",
             url: "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric",
@@ -172,26 +172,6 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                 //기온 상세 정보 //
                 //온도
                 let temp = response["main"]["temp"];
-                //체감 온도
-                let feels_like = response["main"]["feels_like"];
-                //최소 온도
-                let temp_min = response["main"]["temp_min"];
-                //최고 온도
-                let temp_max = response["main"]["temp_max"];
-                //습도
-                let humidity = response["main"]["humidity"]
-                //위치 정보 //
-                //지역
-                let location = response["name"];
-
-                $('.temp').append(temp);
-                $('.location').append(location);
-                $('.temp-min').append(Math.round(temp_min));
-                $('.temp-max').append(Math.round(temp_max));
-                $('.humidity').append(humidity);
-
-
-
 
                 /* 아이콘 파일 주소 작성하는 함수*/
                 function weathericon(wt_icon) {
@@ -207,22 +187,22 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                 }
 
                 /* id에 따른 icon 이름 정해주고 위의 함수를 실행시키는 조건문 */
-                if (200 <= wt_id & wt_id <300) {
+                if (200 <= wt_id <300) {
                     let wt_icon = "thunderstorm";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
                     }
-                    else if (300 <= wt_id & wt_id <400) {
+                    else if (300 <= wt_id <400) {
                     let wt_icon = "drizzle";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
                     }
-                    else if (500 <= wt_id & wt_id <600) {
+                    else if (500 <= wt_id <600) {
                     let wt_icon = "rain";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
                     }
-                    else if (600 <= wt_id & wt_id <700) {
+                    else if (600 <= wt_id <700) {
                     let wt_icon = "snow";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
@@ -232,7 +212,7 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
                     }
-                    else if (801 <= wt_id & wt_id <805) {
+                    else if (801 <= wt_id <805) {
                     let wt_icon = "clouds";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
@@ -244,7 +224,9 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     weatherbg(wt_icon)
 
                 }
-                        /* 썸네일 코드 */
+
+
+                    /* 썸네일 코드 */
 
                 function random(pram, nb) {
                     let imgNum = Math.round(Math.random() * pram.length);
@@ -259,42 +241,42 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     random(tbd1, 1);
                     random(tbd2, 2);
                     random(tbd3, 3);
-                } else if (5 <=temp & temp <9) {
+                } else if (5 <=temp <9) {
                     let tbd1 = S;
                     let tbd2 = D;
                     let tbd3 = E;
                     random(tbd1, 1);
                     random(tbd2, 2);
                     random(tbd3, 3);
-                } else if (9 <=temp & temp <12) {
+                } else if (9 <=temp <12) {
                     let tbd1 = D.concat(L);
                     let tbd2 = Q;
                     let tbd3 = P.concat(K);
                     random(tbd1, 1);
                     random(tbd2, 2);
                     random(tbd3, 3);
-                } else if (12 <=temp & temp <17) {
+                } else if (12 <=temp <17) {
                     let tbd1 = B.concat(T.concat((L)));
                     let tbd2 = G.concat(P);
                     let tbd3 = K;
                     random(tbd1, 1);
                     random(tbd2, 2);
                     random(tbd3, 3);
-                } else if (17 <=temp & temp <20) {
+                } else if (17 <=temp <20) {
                     let tbd1 = M.concat(F);
                     let tbd2 = O.concat((B.concat(Y)));
                     let tbd3 = W.concat(G.concat(P));
                     random(tbd1, 1);
                     random(tbd2, 2);
                     random(tbd3, 3);
-                } else if (20 <=temp & temp <23) {
+                } else if (20 <=temp <23) {
                     let tbd1 = C.concat(U);
                     let tbd2 = W.concat(Y.concat(B));
                     let tbd3 = V.concat(P.concat(G));
                     random(tbd1, 1);
                     random(tbd2, 2);
                     random(tbd3, 3);
-                } else if (23 <=temp & temp <28) {
+                } else if (23 <=temp <28) {
                     let tbd1 = J.concat(N.concat(G.concat(I)));
                     let tbd2 = G;
                     let tbd3 = I;
@@ -309,6 +291,33 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     random(tbd2, 2);
                     random(tbd3, 3);
                 }
+
+
+                    // let imgNum = Math.round(Math.random() * tbd1.length);
+                    // let objImg = document.getElementById("introImg1");
+                    // objImg.src = tbd1[imgNum];
+                    // }
+
+
+                    // function random(tbd) {
+                    //     var imgNum = Math.round(Math.random() * tbd.length);
+                    //     console.log(tbd.length);
+                    //     console.log(imgNum);
+                    //     return imgNum;
+
+                    // function showImage2() {
+                    //
+                    //     let imgNum = Math.round(Math.random() * A2.length);
+                    //     let objImg = document.getElementById("introImg2");
+                    //     objImg.src = A2[imgNum];
+                    // }
+                    //
+                    // function showImage3() {
+                    //     let imgNum = Math.round(Math.random() * A3.length);
+                    //     let objImg = document.getElementById("introImg3");
+                    //     objImg.src = A3[imgNum];
+                    // }
+
 
             }
         })
@@ -326,3 +335,5 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
             }
 
         })
+
+
