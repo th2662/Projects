@@ -85,7 +85,7 @@ N[2] = "https://images.unsplash.com/photo-1571434305870-0621521af411?ixid=MnwxMj
 
 <!--원피스-->
 var O = new Array();
-O[0] = "https://unsplash.com/photos/68csPWTnafo?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink";
+O[0] = "https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80";
 O[1] = "https://images.unsplash.com/photo-1571513721963-d855fd8df4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80";
 O[2] = "https://images.unsplash.com/photo-1575818302670-7e90c19c9082?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80";
 
@@ -244,7 +244,7 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     weatherbg(wt_icon)
 
                 }
-                        /* 썸네일 코드 */
+                    /* 썸네일 코드 */
 
                 if (temp <5) {
                     var tbd1 = R;
@@ -287,6 +287,7 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     var tbd3 = O;
 
                 }
+/*var를 쓰면 let과 달리 바깥으로 변수가 뱉어짐 최고최고*/
 
                 function random(pram, nb) {
                     let imgNum = Math.round(Math.random() * pram.length);
