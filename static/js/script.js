@@ -246,69 +246,57 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                 }
                         /* 썸네일 코드 */
 
-                function random(pram, nb) {
-                    let imgNum = Math.round(Math.random() * pram.length);
-                    let objImg = document.getElementById("introImg"+nb);
-                        objImg.src = pram[imgNum];
+                if (temp <5) {
+                    var tbd1 = R;
+                    var tbd2 = X;
+                    var tbd3 = H;
+
+                } else if (5 <=temp & temp <9) {
+                    var tbd1 = S;
+                    var tbd2 = D;
+                    var tbd3 = E;
+
+                } else if (9 <=temp & temp <12) {
+                    var tbd1 = D.concat(L);
+                    var tbd2 = Q;
+                    var tbd3 = P.concat(K);
+
+                } else if (12 <=temp & temp <17) {
+                    var tbd1 = B.concat(T.concat((L)));
+                    var tbd2 = G.concat(P);
+                    var tbd3 = K;
+
+                } else if (17 <=temp & temp <20) {
+                    var tbd1 = M.concat(F);
+                    var tbd2 = O.concat((B.concat(Y)));
+                    var tbd3 = W.concat(G.concat(P));
+
+                } else if (20 <=temp & temp <23) {
+                    var tbd1 = C.concat(U);
+                    var tbd2 = W.concat(Y.concat(B));
+                    var tbd3 = V.concat(P.concat(G));
+
+                } else if (23 <=temp & temp <28) {
+                    var tbd1 = J.concat(N.concat(G.concat(I)));
+                    var tbd2 = G;
+                    var tbd3 = I;
+
+                } else /* over 28 degree*/ {
+                    var tbd1 = A.concat(J);
+                    var tbd2 = I;
+                    var tbd3 = O;
+
                 }
 
-                if (temp <5) {
-                    let tbd1 = R;
-                    let tbd2 = X;
-                    let tbd3 = H;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (5 <=temp & temp <9) {
-                    let tbd1 = S;
-                    let tbd2 = D;
-                    let tbd3 = E;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (9 <=temp & temp <12) {
-                    let tbd1 = D.concat(L);
-                    let tbd2 = Q;
-                    let tbd3 = P.concat(K);
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (12 <=temp & temp <17) {
-                    let tbd1 = B.concat(T.concat((L)));
-                    let tbd2 = G.concat(P);
-                    let tbd3 = K;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (17 <=temp & temp <20) {
-                    let tbd1 = M.concat(F);
-                    let tbd2 = O.concat((B.concat(Y)));
-                    let tbd3 = W.concat(G.concat(P));
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (20 <=temp & temp <23) {
-                    let tbd1 = C.concat(U);
-                    let tbd2 = W.concat(Y.concat(B));
-                    let tbd3 = V.concat(P.concat(G));
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else if (23 <=temp & temp <28) {
-                    let tbd1 = J.concat(N.concat(G.concat(I)));
-                    let tbd2 = G;
-                    let tbd3 = I;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
-                } else /* over 28 degree*/ {
-                    let tbd1 = A.concat(J);
-                    let tbd2 = I;
-                    let tbd3 = O;
-                    random(tbd1, 1);
-                    random(tbd2, 2);
-                    random(tbd3, 3);
+                function random(pram, nb) {
+                    let imgNum = Math.round(Math.random() * pram.length);
+                    let objImg = document.getElementById("introImg" + nb);
+                    objImg.src = pram[imgNum];
                 }
+
+                random(tbd1, 1);
+                random(tbd2, 2);
+                random(tbd3, 3);
 
             }
         })
