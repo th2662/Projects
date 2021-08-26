@@ -315,3 +315,12 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
             }
 
         })
+
+/* 썸네일 클릭 시 왼쪽에 이미지 표시 */
+
+        function clickThumbnail(imgSrc)
+        {
+            console.log("clickThumbnail 동작 확인");
+            console.log(imgSrc);
+            document.getElementById("mainImg").src = imgSrc;
+        }
