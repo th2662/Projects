@@ -154,7 +154,7 @@ Y[0] = "https://images.unsplash.com/photo-1575228245458-b25e14dd04a8?ixid=MnwxMj
 Y[1] = "https://images.unsplash.com/photo-1610271340738-726e199f0258?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxob29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=600";
 Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
 
-let origin = "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric"
+let origin = "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=3dac59512d86fe78da2957e2909884c4&units=metric"
 $(document).ready(function(){
     ajaxwrapper(origin)
 
@@ -163,6 +163,7 @@ $(document).ready(function(){
 /* OpenWeather API 요청 코드 */
 
     function ajaxwrapper(apiurl) {
+        console.log(apiurl)
         $.ajax({
             type: "GET",
             url: apiurl,
@@ -294,7 +295,9 @@ $(document).ready(function(){
                 random(tbd2, 2);
                 random(tbd3, 3);
 
-                let apiurl = 'https://api.openweathermap.org/data/2.5/onecall?lat='+latitude+'&lon='+longitude+'&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+
+                console.log(latitude, longitude)
+                let apiurl = 'https://api.openweathermap.org/data/2.5/onecall?lat='+latitude+'&lon='+longitude+'&appid=3dac59512d86fe78da2957e2909884c4&units=metric';
                  //자외선
 
                 $.ajax({
