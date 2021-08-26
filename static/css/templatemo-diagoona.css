@@ -26,8 +26,13 @@ ul { padding: 0; }
 a:hover { text-decoration: none; }
 button:focus { outline: none; }
 p { line-height: 1.9; }
-.tm-logo { margin-right: 20px; }
-.tm-slogan { font-size: 0.8rem; }
+
+
+.tm-logo {
+    margin-right: 20px;
+    font-size: 3em; }
+.tm-slogan {
+    font-size: 0.8rem; }
 
 
 
@@ -105,7 +110,6 @@ p { line-height: 1.9; }
     color: #9CC;
 }
 
-/* Contact Search부분*/
 
 /*임의로 추가해 넣은거*/
 
@@ -118,29 +122,13 @@ p { line-height: 1.9; }
     height: 150px;
 }
 
+.float-right{float:right;}
+
+
 /*dropdown*/
-/* Style The Dropdown Button */
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-    color: white;
-    background-color: rgba(0,0,0,0.2);
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-}
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.btn {
+    min-width: 10rem;
 }
 
 /* Links inside the dropdown */
@@ -163,3 +151,4 @@ p { line-height: 1.9; }
 .dropdown:hover .dropbtn {
   background-color: #000000;
 }
+

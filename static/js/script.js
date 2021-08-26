@@ -154,43 +154,46 @@ Y[0] = "https://images.unsplash.com/photo-1575228245458-b25e14dd04a8?ixid=MnwxMj
 Y[1] = "https://images.unsplash.com/photo-1610271340738-726e199f0258?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxob29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=600";
 Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
 
+let origin = "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric"
+$(document).ready(function(){
+    ajaxwrapper(origin)
 
+})
 
 /* OpenWeather API 요청 코드 */
+
+    function ajaxwrapper(apiurl) {
+        console.log(apiurl)
         $.ajax({
             type: "GET",
-            url: "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric",
+            url: apiurl,
             data: {},
             success: function (response) {
-                //기상 상태 정보 //
+                //위도
+                let latitude = response["coord"]["lat"];
+                //경도
+                let longitude = response["coord"]["lon"];
                 //id
                 let wt_id = response["weather"][0]["id"];
-                //날씨
-                let main = response["weather"][0]["main"];
                 //날씨 설명
                 let description = response["weather"][0]["description"];
-                //기온 상세 정보 //
                 //온도
                 let temp = response["main"]["temp"];
-                //체감 온도
-                let feels_like = response["main"]["feels_like"];
                 //최소 온도
                 let temp_min = response["main"]["temp_min"];
                 //최고 온도
                 let temp_max = response["main"]["temp_max"];
                 //습도
                 let humidity = response["main"]["humidity"]
-                //위치 정보 //
                 //지역
                 let location = response["name"];
 
-                $('.temp').append(temp);
-                $('.location').append(location);
-                $('.temp-min').append(Math.round(temp_min));
-                $('.temp-max').append(Math.round(temp_max));
-                $('.humidity').append(humidity);
-
-
+                $('.temp').empty().append(temp);
+                $('.location').empty().append(location);
+                $('.temp-min').empty().append(Math.round(temp_min));
+                $('.temp-max').empty().append(Math.round(temp_max));
+                $('.humidity').empty().append(humidity);
+                $("#dropdownMenuButton1").empty().append(location);
 
 
                 /* 아이콘 파일 주소 작성하는 함수*/
@@ -199,85 +202,79 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     $('.wt-icon').html(iconUrl);
 
                 }
-                /* 배경 파일 작성하는 함수*/
 
+                /* 배경 파일 작성하는 함수*/
                 function weatherbg(wt_icon) {
-                    let bgUrl = 'url("../static/img/'+ wt_icon +'_bg.jpg")'
+                    let bgUrl = 'url("../static/img/' + wt_icon + '_bg.jpg")'
                     $('body').css("background-image", bgUrl);
                 }
 
                 /* id에 따른 icon 이름 정해주고 위의 함수를 실행시키는 조건문 */
-                if (200 <= wt_id & wt_id <300) {
+                if (200 <= wt_id & wt_id < 300) {
                     let wt_icon = "thunderstorm";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
-                    }
-                    else if (300 <= wt_id & wt_id <400) {
+                } else if (300 <= wt_id & wt_id < 400) {
                     let wt_icon = "drizzle";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
-                    }
-                    else if (500 <= wt_id & wt_id <600) {
+                } else if (500 <= wt_id & wt_id < 600) {
                     let wt_icon = "rain";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
-                    }
-                    else if (600 <= wt_id & wt_id <700) {
+                } else if (600 <= wt_id & wt_id < 700) {
                     let wt_icon = "snow";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
-                    }
-                    else if (wt_id == 800) {
+                } else if (wt_id == 800) {
                     let wt_icon = "clear";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
-                    }
-                    else if (801 <= wt_id & wt_id <805) {
+                } else if (801 <= wt_id & wt_id < 805) {
                     let wt_icon = "clouds";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
-                    }
-                    /*700번대 */
-                    else {
+                }
+                /*700번대 */
+                else {
                     let wt_icon = "smog";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
-
+                    weatherbg(wt_icon);
                 }
-                    /* 썸네일 코드 */
 
-                if (temp <5) {
+                /* 썸네일 코드 */
+                if (temp < 5) {
                     var tbd1 = R;
                     var tbd2 = X;
                     var tbd3 = H;
 
-                } else if (5 <=temp & temp <9) {
+                } else if (5 <= temp & temp < 9) {
                     var tbd1 = S;
                     var tbd2 = D;
                     var tbd3 = E;
 
-                } else if (9 <=temp & temp <12) {
+                } else if (9 <= temp & temp < 12) {
                     var tbd1 = D.concat(L);
                     var tbd2 = Q;
                     var tbd3 = P.concat(K);
 
-                } else if (12 <=temp & temp <17) {
+                } else if (12 <= temp & temp < 17) {
                     var tbd1 = B.concat(T.concat((L)));
                     var tbd2 = G.concat(P);
                     var tbd3 = K;
 
-                } else if (17 <=temp & temp <20) {
+                } else if (17 <= temp & temp < 20) {
                     var tbd1 = M.concat(F);
                     var tbd2 = O.concat((B.concat(Y)));
                     var tbd3 = W.concat(G.concat(P));
 
-                } else if (20 <=temp & temp <23) {
+                } else if (20 <= temp & temp < 23) {
                     var tbd1 = C.concat(U);
                     var tbd2 = W.concat(Y.concat(B));
                     var tbd3 = V.concat(P.concat(G));
 
-                } else if (23 <=temp & temp <28) {
-                    var tbd1 = J.concat(N.concat(G.concat(I)));
+                } else if (23 <= temp & temp < 28) {
+                    var tbd1 = J.concat(N);
                     var tbd2 = G;
                     var tbd3 = I;
 
@@ -287,10 +284,9 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                     var tbd3 = O;
 
                 }
-/*var를 쓰면 let과 달리 바깥으로 변수가 뱉어짐 최고최고*/
 
                 function random(pram, nb) {
-                    let imgNum = Math.round(Math.random() * pram.length);
+                    let imgNum = Math.round(Math.random() * (pram.length-1));
                     let objImg = document.getElementById("introImg" + nb);
                     objImg.src = pram[imgNum];
                 }
@@ -299,28 +295,76 @@ Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMj
                 random(tbd2, 2);
                 random(tbd3, 3);
 
+
+                //위도+경도로 url 변경
+                // console.log(latitude, longitude)
+                // let apiurl = 'https://api.openweathermap.org/data/2.5/weather?lat='+latitude+'&lon='+longitude+'&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+                //  //자외선
+                // $.ajax({
+                //     type: "GET",
+                //     url: apiurl,
+                //     data: {},
+                //     success: function (response) {
+                //         let uv = response["current"]["uvi"];
+                //         $('.uvi').empty().append(uv);
+                //     }
+                //
+                // })
             }
-        })
-/*자외선 요청 코드*/
-
-        $.ajax({
-            type: "GET",
-            url: "https://api.openweathermap.org/data/2.5/onecall?lat=37.532600&lon=127.024612&exclude=&appid=00d5b54c01eecba3641625ac2a6d6d54",
-            data: {},
-            success: function (response) {
-                //자외선
-                let uv = response["current"]["uvi"];
-
-                $('.uvi').append(uv);
-            }
 
         })
+    }
+    function drop(drnumb) {
+        let drtext = $('.dr' + drnumb).text();
+        $('#dropdownMenuButton1').text(drtext);
 
-/* 썸네일 클릭 시 왼쪽에 이미지 표시 */
+        if (drnumb == 1) {
+            let city = 'seoul';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
+        } else if (drnumb == 2) {
+            let city = 'incheon';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
 
-        function clickThumbnail(imgSrc)
-        {
-            console.log("clickThumbnail 동작 확인");
-            console.log(imgSrc);
-            document.getElementById("mainImg").src = imgSrc;
+        } else if (drnumb == 3) {
+            let city = 'ulsan';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
+
+        } else if (drnumb == 4) {
+            let city = 'daegu';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
+        } else if (drnumb == 5) {
+            let city = 'pusan';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
+        } else if (drnumb == 6) {
+            let city = 'daejeon';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
+        } else if (drnumb == 7) {
+            let city = 'gwangju';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
+        } else if (drnumb == 8) {
+            let city = 'sejong';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
+        } else {
+            let city = 'jeju';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            ajaxwrapper(apiurl)
         }
+
+    }
+
+
+    /* 썸네일 클릭 시 왼쪽에 이미지 표시 */
+
+    function clickThumbnail(imgSrc) {
+        console.log("clickThumbnail 동작 확인");
+        console.log(imgSrc);
+        document.getElementById("mainImg").src = imgSrc;
+    }
