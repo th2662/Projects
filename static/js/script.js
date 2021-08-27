@@ -361,7 +361,12 @@ $(document).ready(function(){
     /* 썸네일 클릭 시 왼쪽에 이미지 표시 */
 
     function clickThumbnail(imgSrc) {
-        console.log("clickThumbnail 동작 확인");
-        console.log(imgSrc);
         document.getElementById("mainImg").src = imgSrc;
+    }
+
+/* 왼쪽 이미지 클릭시 이미지 닫기 */
+
+    function closeImg()
+    {
+        document.getElementById("mainImg").src = "";
     }
