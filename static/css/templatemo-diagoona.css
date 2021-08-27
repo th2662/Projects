@@ -163,6 +163,16 @@ p { line-height: 1.9; }
 .row-01 {
     font-family: 'Pacifico', cursive;
 }
+/*큰사이즈 이미지*/
+
+.bigImgSize {
+    max-width: 60%;
+    max-height: 60%;
+    position: absolute;
+    left: 13.5%;
+    top: 12%;
+    border-radius: 40px 40px 40px 40px / 40px 40px 40px 40px;
+}
 
 /*dropdown*/
 
@@ -177,7 +187,9 @@ p { line-height: 1.9; }
   background-color: rgba(249,249,249,0.8);
   display: block;
 }
-
+.dropdown-item {
+    font-family: 'Gowun Dodum', sans-serif;
+}
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1}
 
