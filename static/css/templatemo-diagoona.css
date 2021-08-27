@@ -69,9 +69,12 @@ p { line-height: 1.9; }
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 }
 
-.tm-row { display: flex; }
+.tm-row {
+    display: flex;
+}
 
 .tm-col-left {
     width: 50%;
@@ -91,6 +94,22 @@ p { line-height: 1.9; }
     max-width: 660px;
     margin-top: 50px;
     padding-right: 20px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+/*섬네일 모서리 둥글게*/
+.col {
+    border-radius: 40px 40px 40px 40px / 40px 40px 40px 40px;
+
+    /*투명도*/
+    opacity: 0.8;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+/*섬네일 마우스 가져대면 선명*/
+.col:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 
 .tm-about { max-width: 525px; }
