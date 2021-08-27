@@ -7,129 +7,141 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WTW - what to where</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
-    <link href="../static/fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
-    <link href="../static/css/templatemo-diagoona.css" rel="stylesheet" />
-
-<!--bootstrap.min.css는 bootstrap 배포파일 그냥 두기-->
-<!-- js 기능 사용하지 않아서 삭제함. 우리가 원하는 배경이미지 기능은 코드 새로 짜야됨-->
-<!-- <hr>태그 삭제, toggler css 삭제 , tm-bg-control-* css 삭제-, index 외 페이지용 css 삭제-->
-<!-- <main>태그 <div>로 변경 -->
-<!-- CSS @media 삭제, 디스플레이 규격에 따라 어떻게 표시할지에 대한 설정, 필요하면 다시 넣으면 됨-->
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
     <script src="../static/js/script.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript"></script>
 
-        let imgArray= new Array();
-        imgArray[0]="https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
-        imgArray[1]="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxob29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=600";
-        imgArray[2]="https://images.unsplash.com/photo-1575228245458-b25e14dd04a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
-        imgArray[3]="https://images.unsplash.com/photo-1578102718171-ec1f91680562?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGNvYXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"/>
+    <!-- https://fonts.google.com/ -->
+    <link href="../static/fontawesome/css/all.min.css" rel="stylesheet"/> <!-- https://fontawesome.com/ -->
+    <link href="../static/css/templatemo-diagoona.css" rel="stylesheet"/>
 
-        function showImage()
-        {
-            let imgNum=Math.round(Math.random() * imgArray.length);
-            let objImg=document.getElementById("introImg");
-            objImg.src=imgArray[imgNum];
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap" rel="stylesheet">
 
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200&display=swap" rel="stylesheet">
+
+    <!--bootstrap.min.css는 bootstrap 배포파일 그냥 두기-->
+    <!-- js 기능 사용하지 않아서 삭제함. 우리가 원하는 배경이미지 기능은 코드 새로 짜야됨-->
+    <!-- <hr>태그 삭제, toggler css 삭제 , tm-bg-control-* css 삭제-, index 외 페이지용 css 삭제-->
+    <!-- <main>태그 <div>로 변경 -->
+    <!-- CSS @media 삭제, 디스플레이 규격에 따라 어떻게 표시할지에 대한 설정, 필요하면 다시 넣으면 됨-->
 
 
 </head>
 
-
-<body onload="showImage()">
-    <div class="tm-container">  <!--전체 컨테이너-->
-            <div class="tm-row pt-4 row-01">
-                <div class="tm-col-left">
-                    <div class="tm-site-header media">
-                        <i class="fas fa-umbrella-beach fa-3x mt-1 tm-logo"></i>
-                        <div class="media-body">
-                            <h1 class="tm-sitename text-uppercase">WTW</h1>
-                            <p class="tm-slogon">What To Where</p>
-                        </div>
-                    </div>
+<body>
+<div class="tm-container">  <!--전체 컨테이너-->
+    <div class="tm-row pt-4 row-01">
+        <div class="tm-col-left">
+            <div class="tm-site-header media">
+                <i class="fas fa-temperature-high tm-logo"></i>
+                <div class="media-body">
+                    <h1 class="tm-sitename text-uppercase">WTW</h1>
+                    <p class="tm-slogon">What To Wear</p>
                 </div>
-                <div class="tm-col-right">
-                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
-                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
-                            <ul class="navbar-nav text-uppercase">
-                                <div class="input-group mb-3">
-                                  <input type="text" class="form-control" placeholder="search" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                  <span class="input-group-text" id="basic-addon2">검색</span>
-                                </div>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="tm-row row-02"> <!--썸네일 -->
-                <div class="tm-col-left"></div>
-                <div class="tm-col-right">
-                    <section class="tm-content">
-                        <div class="row row-cols-3" >
-
-                            <img id="introImg" alt="..." class="col" boreder="0">
-                            <img src="https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60" alt="..." class="col" >
-                            <img src="https://images.unsplash.com/photo-1575228245458-b25e14dd04a8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60" alt="…" class="col" >
-                        </div>
-                    </section>
-
-                </div>
-            </div>
-            <div class="tm-row row-03">
-                <div class="tm-col-left">
-                    <section class="tm-content">
-                        <h2 class="mb-5 tm-content-title">큰 옷 들어갈 자리</h2>
-                    </section>
-                </div>
-                <div class="tm-col-right">
-                    <section class="tm-content">
-                        <h2 class="mb-5 tm-content-title">날씨 상세정보</h2>
-                        <p class="mb-5">
-                            <span>최고기온/최저기온</span>
-                            <span class="float-right">
-                                <span class="temp-min"></span>
-                                <span class="temp-max">/ </span>
-                            </span>
-
-                        </p>
-                        <p class="mb-5">
-                            <span>습도</span>
-                            <span class="humidity float-right"></span>
-                        </p>
-                        <p class="mb-5">
-                            <span>자외선</span>
-                            <span class="uvi float-right"></span>
-                        </p>
-                    </section>
-                </div>
-            </div>
-            <div class="tm-row row-04">
-            <div class="tm-col-left text-start">
-                <span class="wt-icon">아이콘 </span>
-                <span class="location"> </span>
-                <span class="temp"> </span>
-            </div>
-            <div class="tm-col-right tm-col-footer">
-                <footer class="tm-site-footer text-right">
-                </footer>
             </div>
         </div>
-
-
-
-        <!-- Background Divider -->
-        <div class="tm-bg">
-            <div class="tm-bg-left"></div>
-            <div class="tm-bg-right"></div>
+        <div class="tm-col-right">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item dr1" onclick="drop(1)">서울특별시</a></li>
+                    <li><a class="dropdown-item dr2" onclick="drop(2)">인천광역시</a></li>
+                    <li><a class="dropdown-item dr3" onclick="drop(3)">울산광역시</a></li>
+                    <li><a class="dropdown-item dr4" onclick="drop(4)">대구광역시</a></li>
+                    <li><a class="dropdown-item dr5" onclick="drop(5)">부산광역시</a></li>
+                    <li><a class="dropdown-item dr6" onclick="drop(6)">대전광역시</a></li>
+                    <li><a class="dropdown-item dr7" onclick="drop(7)">광주광역시</a></li>
+                    <li><a class="dropdown-item dr8" onclick="drop(8)">세종자치특별시</a></li>
+                    <li><a class="dropdown-item dr9" onclick="drop(9)">제주특별자치도</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-<!--js 사용하려면 기본 제공되는 import 코드 다시 붙여넣어야 됨-->
+
+    <div class="tm-row row-02"> <!--썸네일 -->
+        <div class="tm-col-left">
+            <section class="tm-content">
+                <h2 class="mb-5 tm-content-title"><img src="" class="mimg" id="mainImg"></h2>
+            </section>
+        </div>
+        <div class="tm-col-right">
+            <section class="tm-content">
+                <div class="row row-cols-3">
+                    <img id="introImg1" alt="..." class="col" onclick="clickThumbnail(this.src)">
+                    <img id="introImg2" alt="..." class="col" onclick="clickThumbnail(this.src)">
+                    <img id="introImg3" alt="..." class="col" onclick="clickThumbnail(this.src)">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="tm-row row-03">
+        <div class="tm-col-left">
+            <section class="tm-content wt-set">
+                <div class="wt-icon">아이콘</div>
+                <div class="location"></div>
+                <div class="temp"></div>
+            </section>
+        </div>
+        <div class="tm-col-right">
+            <section class="tm-content">
+                <h2 class="mb-5 tm-content-title">날씨 상세정보</h2>
+                <p class="mb-5">
+                    <span>최고기온/최저기온</span>
+                    <span class="float-right">
+                                <span class="temp-min"></span><span>&nbsp;℃</span>
+                                <span class="temp-max">/ </span><span>&nbsp;℃</span>
+                            </span>
+
+                </p>
+                <p class="mb-5">
+                    <span>습도</span>
+                    <span class="float-right">
+                                <span class="humidity"></span><span>&nbsp;%</span>
+                            </span>
+                </p>
+                <p class="mb-5">
+                    <span>자외선</span>
+                    <span class="float-right">
+                                <span class="uvi"></span><span>&nbsp;uv</span>
+                            </span>
+                </p>
+            </section>
+        </div>
+    </div>
+    <div class="tm-row row-04">
+        <div class="tm-col-left text-start">
+
+        </div>
+        <div class="tm-col-right tm-col-footer">
+            <footer class="tm-site-footer text-right">
+            </footer>
+        </div>
+    </div>
+
+
+    <!— Background Divider —>
+    <div class="tm-bg">
+        <div class="tm-bg-left"></div>
+        <div class="tm-bg-right"></div>
+    </div>
+</div>
+<!—js 사용하려면 기본 제공되는 import 코드 다시 붙여넣어야 됨—>
 </body>
 </html>
