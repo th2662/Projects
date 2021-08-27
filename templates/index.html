@@ -46,6 +46,16 @@
 <!-- <main>태그 <div>로 변경 -->
 <!-- CSS @media 삭제, 디스플레이 규격에 따라 어떻게 표시할지에 대한 설정, 필요하면 다시 넣으면 됨-->
 
+<style>
+    .bigImgSize {
+        max-width: 60%;
+        max-height : 60%;
+        position: absolute;
+        left: 13.5%;
+        top: 12%;
+        border-radius: 40px 40px 40px 40px / 40px 40px 40px 40px;
+    }
+</style>
 
 
 </head>
@@ -84,7 +94,7 @@
             <div class="tm-row row-02"> <!--썸네일 -->
                 <div class="tm-col-left">
                     <section class="tm-content">
-                        <h2 class="mb-5 tm-content-title"><img src="" class="mimg" id="mainImg"></h2>
+                        <h2 class="mb-5 tm-content-title"><img class="bigImgSize" id="mainImg" onclick="closeImg()"></h2>
                     </section>
                 </div>
                 <div class="tm-col-right">
