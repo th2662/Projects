@@ -28,9 +28,26 @@ button:focus { outline: none; }
 p { line-height: 1.9; }
 
 
+/*좌측상단 로고창 배치*/
+.witcan{
+    display: flex;
+}
+/*좌측하단 날씨 아이콘 배치 */
+.lowcan{
+    display: flex;
+    align-items: center;
+}
+.wt-icon, .wt-loc, .wt-temp { margin-right: 20px;}
+.wt-loc {font-size: 3rem;;}
+.wt-temp {font-size: 2rem;
+}
+
+
 .tm-logo {
     margin-right: 20px;
-    font-size: 3em; }
+    font-size: 85px;
+}
+
 .tm-slogan {
     font-size: 0.8rem; }
 
@@ -45,6 +62,7 @@ p { line-height: 1.9; }
     height: 100%;
     display: flex;
     z-index: -1000;
+    background-color: rgba(0,0,0,0.15);
 }
 /* 페이지 반쪽 나누기*/
 .tm-bg-left,
@@ -57,7 +75,6 @@ p { line-height: 1.9; }
 .tm-bg-right { background-color: rgba(0,0,0,0.5); }
 
 .tm-bg-left {
-    /*border-right: 230px solid rgba(0,0,0,0.5);*/
     border-top: 100vh solid transparent;
 }
 .tm-container {
@@ -69,7 +86,7 @@ p { line-height: 1.9; }
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Pacifico', cursive;
 }
 
 .tm-row {
@@ -94,7 +111,7 @@ p { line-height: 1.9; }
     max-width: 660px;
     margin-top: 50px;
     padding-right: 20px;
-    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-family: 'Gowun Dodum', sans-serif;
 }
 
 /*섬네일 모서리 둥글게*/
@@ -143,6 +160,9 @@ p { line-height: 1.9; }
 
 .float-right{float:right;}
 
+.row-01 {
+    font-family: 'Pacifico', cursive;
+}
 
 /*dropdown*/
 

@@ -187,7 +187,7 @@ $(document).ready(function(){
                 //지역
                 let location = response["name"];
 
-                $('.temp').empty().append(temp);
+                $('.temp').empty().append((Math.round(temp*10)/10)+'℃');
                 $('.location').empty().append(location);
                 $('.temp-min').empty().append(Math.round(temp_min));
                 $('.temp-max').empty().append(Math.round(temp_max));
