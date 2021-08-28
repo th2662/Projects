@@ -100,32 +100,45 @@
                     <section class ="tm-content lowcan">
                         <div class="wt-icon"> </div>
                         <div class="wt-loc location"></div>
-                        <div class="wt-temp temp"></div>
+                        <div class="wt-temp temp "></div>
                     </section>
                 </div>
                 <div class="tm-col-right">
                     <section class="tm-content">
-                        <h2 class="mb-5 tm-content-title">날씨 상세정보</h2>
-                        <p class="mb-5">
-                            <span>최고기온/최저기온</span>
-                            <span class="float-right">
-                                <span class="temp-min"></span><span>&nbsp;℃</span>
-                                <span class="temp-max">/ </span><span>&nbsp;℃</span>
-                            </span>
+                        <table>
+                            <thead>
+                            <tr><h2>날씨 상세정보</h2></tr>
+                            <tr><!--높이조절용공란--></tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="tb-col-1">
+                                    최고기온 / 최저기온
+                                </td>
+                                <td class="tb-col-2">
+                                    <span class="temp-min"></span><span>℃/</span>
+                                    <span class="temp-max"></span><span>℃</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tb-col-1">
+                                    습도
+                                </td>
+                                <td class="tb-col-2">
+                                    <span class="humidity"></span><span>%</span>
+                                </td>
+                            </tr>
+                            <tr >
+                                <td class="tb-col-1">
+                                    자외선
+                                </td>
+                                <td class="tb-col-2">
+                                    <span class="uvi"></span><span>uv</span>
+                                </td>
+                            </tr>
 
-                        </p>
-                        <p class="mb-5">
-                            <span>습도</span>
-                            <span class="float-right">
-                                <span class="humidity"></span><span>&nbsp;%</span>
-                            </span>
-                        </p>
-                        <p class="mb-5">
-                            <span>자외선</span>
-                            <span class="float-right">
-                                <span class="uvi"></span><span>&nbsp;uv</span>
-                            </span>
-                        </p>
+                            </tbody>
+                        </table>
                     </section>
                 </div>
             </div>

@@ -40,6 +40,9 @@ p { line-height: 1.9; }
 .wt-icon, .wt-loc, .wt-temp { margin-right: 20px;}
 .wt-loc {font-size: 3rem;;}
 .wt-temp {font-size: 2rem;
+    align-items: flex-end;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 
@@ -157,8 +160,18 @@ p { line-height: 1.9; }
     width : 150px;
     height: 150px;
 }
+table {
+    width:100%;
+    min-height:150px;
+    table-layout:fixed;
+    overflow: hidden;
+    border-top: 1px solid;
 
-.float-right{float:right;}
+}
+
+.tb-col-2 {
+      text-align: right;
+}
 
 .row-01 {
     font-family: 'Pacifico', cursive;
