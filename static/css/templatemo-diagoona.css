@@ -184,6 +184,7 @@ table {
     left: 13.5%;
     top: 12%;
     border-radius: 40px 40px 40px 40px / 40px 40px 40px 40px;
+    z-index: 2
 }
 
 /*dropdown*/
