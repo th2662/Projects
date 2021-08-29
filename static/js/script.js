@@ -222,6 +222,8 @@ $(document).ready(function(){
                     let wt_icon = "drizzle";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
+                    $('.maskicon').attr('src', "../static/img/umbrella.svg");
+                    $('.maskline').empty().text("빗방울 떨어져요!");
                 } else if (500 <= wt_id & wt_id < 600) {
                     let wt_icon = "rain";
                     weathericon(wt_icon);
