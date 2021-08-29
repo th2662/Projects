@@ -184,6 +184,8 @@ $(document).ready(function(){
                 let temp_max = response["main"]["temp_max"];
                 //습도
                 let humidity = response["main"]["humidity"]
+                //풍속
+                let wind = response["wind"]["speed"]
                 //지역
                 let location = response["name"];
 
@@ -193,6 +195,7 @@ $(document).ready(function(){
                 $('.temp-max').empty().append(Math.round(temp_max));
                 $('.humidity').empty().append(humidity);
                 $("#dropdownMenuButton1").empty().append(location);
+                $('.wind').empty().append(wind);;
 
 
                 /* 아이콘 파일 주소 작성하는 함수*/
@@ -208,6 +211,8 @@ $(document).ready(function(){
                     $('body').css("background-image", bgUrl);
                 }
 
+
+
                 /* id에 따른 icon 이름 정해주고 위의 함수를 실행시키는 조건문 */
                 if (200 <= wt_id & wt_id < 300) {
                     let wt_icon = "thunderstorm";
@@ -220,7 +225,9 @@ $(document).ready(function(){
                 } else if (500 <= wt_id & wt_id < 600) {
                     let wt_icon = "rain";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
+                    weatherbg(wt_icon);
+                    $('.maskicon').attr('src', "../static/img/umbrella.svg");
+                    $('.maskline').empty().text("우산 챙겨가세요!");
                 } else if (600 <= wt_id & wt_id < 700) {
                     let wt_icon = "snow";
                     weathericon(wt_icon);
@@ -232,7 +239,7 @@ $(document).ready(function(){
                 } else if (801 <= wt_id & wt_id < 805) {
                     let wt_icon = "clouds";
                     weathericon(wt_icon);
-                    weatherbg(wt_icon)
+                    weatherbg(wt_icon);
                 }
                 /*700번대 */
                 else {

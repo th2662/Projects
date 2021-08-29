@@ -103,10 +103,14 @@ p { line-height: 1.9; }
 }
 
 .tm-col-right {
+    display: flex;
+    flex-direction: column;
+
     width: 50%;
     height: 100%;
     padding-left: 70px;
     padding-right: 70px;
+
 }
 
 .tm-content {
@@ -159,22 +163,49 @@ p { line-height: 1.9; }
     width : 150px;
     height: 150px;
 }
-table {
+
+.table-02 {
+    width: 100%;
+    min-height: 150px;
+    table-layout: fixed;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.table-02 {
     width:100%;
     min-height:150px;
     table-layout:fixed;
     overflow: hidden;
     border-top: 1px solid;
-
 }
 
 .tb-col-2 {
       text-align: right;
 }
 
+.tb-col-3 {
+      text-align: right;
+}
+
 .row-01 {
     font-family: 'Pacifico', cursive;
 }
+
+.maskicon {
+    width: 7rem;
+
+}
+
+.maskline {
+    padding-left: 10px;
+    text-align: center;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+
+
 /*큰사이즈 이미지*/
 
 .bigImgSize {

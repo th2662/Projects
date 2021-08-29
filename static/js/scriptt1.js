@@ -221,6 +221,8 @@ $(document).ready(function(){
                     let wt_icon = "rain";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
+                    $('.maskicon').attr('src', "../static/img/umbrella.svg");
+                    $('.maskline').empty().text("우산 챙겨가세요!");
                 } else if (600 <= wt_id & wt_id < 700) {
                     let wt_icon = "snow";
                     weathericon(wt_icon);

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WTW - what to where</title>
+    <title>WTW - what to wear</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -63,7 +63,7 @@
     </script>
 </head>
 <body onload="showClock()">
-<div id="divClock" class="clock"> </div>
+<!--<div id="divClock" class="clock"> </div>-->
 <!--여기까지 새로 작성된 부분-->
 <!--</div> index.html 과 내용 동일 id만 다를 것 여기서부터 확인하면 됨 -->
     <div class="tm-container">  <!--전체 컨테이너-->
@@ -110,6 +110,20 @@
             </div>
             <div class="tm-col-right">
                 <section class="tm-content">
+                    <div class="dailyline">
+                        <table class="table-01">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <img class="maskicon" src="../static/img/mask.svg" alt ="마스크">
+                                </td>
+                                <td class="maskline">
+                                    마스크 착용 잊지마세요!
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div class="row row-cols-3">
                         <img id="introImg1" alt="..." class="col" onclick="clickThumbnail(this.src)">
                         <img id="introImg2" alt="..." class="col" onclick="clickThumbnail(this.src)">
@@ -147,10 +161,10 @@
                         </tr>
                         <tr>
                             <td class="tb-col-1">
-                                강수확률
+                                풍속
                             </td>
                             <td class="tb-col-2">
-                                <span class="rain"></span><span>%</span>
+                                <span class="wind"></span><span>m/s</span>
                             </td>
                         </tr>
                         <tr>
