@@ -188,6 +188,16 @@ $(document).ready(function(){
                 //지역
                 let location = response["name"];
 
+                let tmdate = response["list"];
+
+
+                var today = new Date();
+                console.log(today);
+
+
+
+
+
                 $('.temp').empty().append(temp);
                 $('.location').empty().append(location);
                 $('.temp-min').empty().append(Math.round(temp_min));

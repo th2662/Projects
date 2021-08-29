@@ -38,32 +38,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@200&display=swap" rel="stylesheet">
 
-    <script type="text/javascript">
-        function showClock() {
-            var currentDate = new Date();
-            var divClock = document.getElementById('divClock');
-            var msg = " ";
-            if (currentDate.getHours() > 12) {      //시간이 12보다 크다면 오후 아니면 오전
-                msg += "PM ";
-                msg += currentDate.getHours() - 12 + " : ";
-            } else {
-                msg += "AM ";
-                msg += currentDate.getHours() + " : ";
-            }
 
-            msg += currentDate.getMinutes() + " ";
-
-            divClock.innerText = msg;
-
-            if (currentDate.getMinutes() > 58) {    //정각 1분전부터 빨강색으로 출력
-                divClock.style.color = "red";
-            }
-            setTimeout(showClock, 1000);  //1초마다 갱신
-        }
-    </script>
 </head>
 <body onload="showClock()">
-<!--<div id="divClock" class="clock"> </div>-->
+<div id="divClock" class="clock"> </div>
 <!--여기까지 새로 작성된 부분-->
 <!--</div> index.html 과 내용 동일 id만 다를 것 여기서부터 확인하면 됨 -->
     <div class="tm-container">  <!--전체 컨테이너-->
@@ -95,7 +73,7 @@
                     </ul>
                     <!--                        <오늘 날씨 버튼></오늘>-->
 
-                    <button type="button" id="BtnTM2" onclick="Today()" class="btn btn-secondary">Weather, Today
+<!--                    <button type="button" id="BtnTM2" onclick="Today()" class="btn btn-secondary">Weather, Today-->
                     </button>
 
                 </div>

@@ -195,6 +195,9 @@ $(document).ready(function(){
                 $("#dropdownMenuButton1").empty().append(location);
 
 
+
+
+
                 /* 아이콘 파일 주소 작성하는 함수*/
                 function weathericon(wt_icon) {
                     let iconUrl = '<img src="../static/img/' + wt_icon + '.svg" alt="' + description + '" class="svg">'
