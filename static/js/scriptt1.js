@@ -154,7 +154,7 @@ Y[0] = "https://images.unsplash.com/photo-1575228245458-b25e14dd04a8?ixid=MnwxMj
 Y[1] = "https://images.unsplash.com/photo-1610271340738-726e199f0258?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxob29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=600";
 Y[2] = "https://images.unsplash.com/photo-1578172745579-92c2de4f383a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODF8fGhvb2R8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60";
 
-let origin = "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric"
+let origin = "https://api.openweathermap.org/data/2.5/forcast?q=Seoul&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric"
 $(document).ready(function(){
     ajaxwrapper(origin)
 
@@ -294,19 +294,7 @@ $(document).ready(function(){
                 random(tbd2, 2);
                 random(tbd3, 3);
 
-                let apiurl = 'https://api.openweathermap.org/data/2.5/onecall?lat='+latitude+'&lon='+longitude+'&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
-                 //자외선
 
-                $.ajax({
-                    type: "GET",
-                    url: apiurl,
-                    data: {},
-                    success: function (response) {
-                        let uv = response["current"]["uvi"];
-                        $('.uvi').empty().append(uv);
-                    }
-
-                })
             }
 
         })
@@ -361,41 +349,41 @@ function showClock() {
 
         if (drnumb == 1) {
             let city = 'seoul';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
         } else if (drnumb == 2) {
             let city = 'incheon';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
 
         } else if (drnumb == 3) {
             let city = 'ulsan';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
 
         } else if (drnumb == 4) {
             let city = 'daegu';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
         } else if (drnumb == 5) {
             let city = 'pusan';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
         } else if (drnumb == 6) {
             let city = 'daejeon';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
         } else if (drnumb == 7) {
             let city = 'gwangju';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
         } else if (drnumb == 8) {
             let city = 'sejong';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' +city+ '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
         } else {
             let city = 'jeju';
-            let apiurl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
+            let apiurl = 'https://api.openweathermap.org/data/2.5/forcast?q=' + city + '&appid=00d5b54c01eecba3641625ac2a6d6d54&units=metric';
             ajaxwrapper(apiurl)
         }
 
