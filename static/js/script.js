@@ -311,6 +311,50 @@ $(document).ready(function(){
 
         })
     }
+
+
+//누르면 내일날씨
+
+function Tomorrow() {
+    window.location.href = '../templates/t1.html'
+
+}
+
+//누르면 지금 날씨
+
+function Today() {
+    window.location.href = '../templates/index.html'
+}
+
+
+//시계
+
+function showClock() {
+    var currentDate = new Date();
+    var divClock = document.getElementById('divClock');
+    var msg = " ";
+    if (currentDate.getHours() > 12) {      //시간이 12보다 크다면 오후 아니면 오전
+        msg += "PM ";
+        msg += currentDate.getHours() - 12 + " : ";
+    } else {
+        msg += "AM ";
+        msg += currentDate.getHours() + " : ";
+    }
+
+    msg += currentDate.getMinutes() + " ";
+
+    divClock.innerText = msg;
+
+    if (currentDate.getMinutes() > 58) {    //정각 1분전부터 빨강색으로 출력
+        divClock.style.color = "red";
+    }
+    setTimeout(showClock, 1000);  //1초마다 갱신
+}
+
+
+
+
+
     function drop(drnumb) {
         let drtext = $('.dr' + drnumb).text();
         $('#dropdownMenuButton1').text(drtext);
