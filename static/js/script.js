@@ -218,6 +218,8 @@ $(document).ready(function(){
                     let wt_icon = "thunderstorm";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
+                    $('.maskicon').attr('src', "../static/img/mask.svg");
+                    $('.maskline').empty().text("마스크 착용 잊지마세요!");
                 } else if (300 <= wt_id & wt_id < 400) {
                     let wt_icon = "drizzle";
                     weathericon(wt_icon);
@@ -234,20 +236,28 @@ $(document).ready(function(){
                     let wt_icon = "snow";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
+                    $('.maskicon').attr('src', "../static/img/mask.svg");
+                    $('.maskline').empty().text("마스크 착용 잊지마세요!");
                 } else if (wt_id == 800) {
                     let wt_icon = "clear";
                     weathericon(wt_icon);
                     weatherbg(wt_icon)
+                    $('.maskicon').attr('src', "../static/img/mask.svg");
+                    $('.maskline').empty().text("마스크 착용 잊지마세요!");
                 } else if (801 <= wt_id & wt_id < 805) {
                     let wt_icon = "clouds";
                     weathericon(wt_icon);
                     weatherbg(wt_icon);
+                    $('.maskicon').attr('src', "../static/img/mask.svg");
+                    $('.maskline').empty().text("마스크 착용 잊지마세요!");
                 }
                 /*700번대 */
                 else {
                     let wt_icon = "smog";
                     weathericon(wt_icon);
                     weatherbg(wt_icon);
+                    $('.maskicon').attr('src', "../static/img/mask.svg");
+                    $('.maskline').empty().text("마스크 착용 잊지마세요!");
                 }
 
                 /* 썸네일 코드 */
